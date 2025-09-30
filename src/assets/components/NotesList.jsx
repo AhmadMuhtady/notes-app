@@ -1,8 +1,8 @@
 import Button from './Button';
 import { useState } from 'react';
 
-const NotesList = ({ notes }) => {
-	const [isFormVisible, setIsFormVisible] = useState(false);
+const NotesList = ({ notes, deleteNote }) => {
+	const [isFormVisible, setIsFormVisible] = useState(true);
 
 	if (notes.length === 0) {
 		return <p className="text-center text-gray-500">No Notes Yet</p>;
@@ -36,6 +36,12 @@ const NotesList = ({ notes }) => {
 								<strong>Description: </strong>
 								{note.description}
 							</p>
+							<Button
+								onClick={() => deleteNote(note.id)}
+								className="mt-3 text-red-500 cursor-pointer transition hover:text-red-700"
+							>
+								🗑️ Delete
+							</Button>
 						</div>
 					))}
 				</div>
