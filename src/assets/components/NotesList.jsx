@@ -40,7 +40,6 @@ const NotesList = ({ notes }) => {
 					))}
 				</div>
 			)}
-			;
 		</>
 	);
 };
