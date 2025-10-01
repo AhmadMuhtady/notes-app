@@ -4,15 +4,13 @@ import TextInputs from './inputs/TextInputs';
 import SelectInput from './inputs/SelectInput';
 import TextArea from './inputs/TextArea';
 
-const NoteForm = ({ notes, setNotes }) => {
+const NoteForm = ({ notes, setNotes, isFormVisible, setIsFormVisible }) => {
 	const [formData, setFormData] = useState({
 		title: '',
 		priority: 'Medium',
 		category: 'Work',
 		description: '',
 	});
-
-	const [isFormVisible, setIsFormVisible] = useState(false);
 
 	const handleChange = (e) => {
 		setFormData({
